@@ -1,4 +1,3 @@
-from test_input import test_input
 from input import input
 
 def filter_out_non_increasing_or_decreasing_levels(x):
