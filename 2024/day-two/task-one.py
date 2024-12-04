@@ -1,7 +1,7 @@
 from input import input
 
 def filter_out_non_increasing_or_decreasing_levels(x):
-    return True if x == sorted(x) or x == sorted(x, reverse=True) and len(x) == len(set(x)) else False
+    return True if x == sorted(x) or x == sorted(x, reverse=True) else False
 
 
 def check_number_of_safe_reports(reports):
