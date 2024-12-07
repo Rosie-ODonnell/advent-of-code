@@ -4,7 +4,7 @@ from test_input import test_input
 # UNSOLVED - WIP
 
 
-def check_for_bad_level(row, number_of_safe_reports, number_of_bad_levels_in_row):
+def check_for_bad_level(row, number_of_safe_reports):
     if row[0] > row[1]:
         row.reverse()
     
@@ -18,7 +18,7 @@ def check_for_bad_level(row, number_of_safe_reports, number_of_bad_levels_in_row
         if number_of_safe_levels == len(row):
             number_of_safe_reports += 1
 
-    return number_of_safe_reports, number_of_bad_levels_in_row
+    return number_of_safe_reports
 
 
 def check_number_of_safe_reports(reports):
@@ -26,7 +26,7 @@ def check_number_of_safe_reports(reports):
     
     for row in reports:
         number_of_bad_levels_in_row = 0
-        number_of_safe_reports, number_of_bad_levels_in_row = check_for_bad_level(row, number_of_safe_reports, number_of_bad_levels_in_row)
+        number_of_safe_reports = check_for_bad_level(row, number_of_safe_reports)
 
     return number_of_safe_reports
         
