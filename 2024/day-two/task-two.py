@@ -21,7 +21,8 @@ def check_for_bad_level(row, number_of_safe_reports, number_of_bad_levels_in_row
     return number_of_safe_reports, number_of_bad_levels_in_row
 
 
-def check_for_bad_rows(number_of_safe_reports, reports):
+def check_for_bad_rows(reports):
+    number_of_safe_reports = 0
     for row in reports:
         number_of_bad_levels_in_row = 0
         number_of_safe_reports, number_of_bad_levels_in_row = check_for_bad_level(row, number_of_safe_reports, number_of_bad_levels_in_row)
@@ -29,9 +30,9 @@ def check_for_bad_rows(number_of_safe_reports, reports):
     return number_of_safe_reports
 
 def check_number_of_safe_reports(reports):
-    number_of_safe_reports = 0
+    
 
-    number_of_safe_reports = check_for_bad_rows(number_of_safe_reports, reports)
+    number_of_safe_reports = check_for_bad_rows(reports)
             
     return number_of_safe_reports  
         
