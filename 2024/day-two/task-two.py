@@ -1,15 +1,7 @@
 from input import input
 from test_input import test_input
 
-
-# loop over items in row
-# do checks on items in row - is big gap or going down
-# loop over row without index
-# keep count, you only need to do this second loop one more time.
-
-
-# need to keep count of number of bad rows so only loop once
-
+# UNSOLVED - WIP
 
 
 def check_for_bad_level(row, number_of_safe_reports, number_of_bad_levels_in_row):
