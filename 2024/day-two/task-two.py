@@ -1,18 +1,30 @@
 from input import input
 from test_input import test_input
 
-def check_for_bad_rows(number_of_safe_reports, reports):
-    for row in reports:
 
+# loop over items in row
+# do checks on items in row - is big gap or going down
+# loop over row without index
+# keep count, you only need to do this second loop one more time.
+
+
+# need to keep count of number of bad rows so only loop once
+
+
+
+def check_for_bad_level(reports, number_of_safe_reports):
+    for row in reports:
         if row == sorted(row) or row == sorted(row, reverse=True):
             differences = [abs(current-following) for current, following in zip(row[:-1], row[1:])]
 
             if all([num in [1,2,3] for num in differences]):
-
-
                 # // need to enter recursion - need to loop again but this time remove one item in list
                 number_of_safe_reports += 1
+            
+    return number_of_safe_reports
 
+def check_for_bad_rows(number_of_safe_reports, reports):
+    number_of_safe_reports = check_for_bad_level(reports, number_of_safe_reports)
     return number_of_safe_reports
 
 def check_number_of_safe_reports(reports):
@@ -46,26 +58,3 @@ print(check_number_of_safe_reports(structured_input))
 
 
 
-
-
-
-
-
-#  if row[0] > row[1]:
-#             row.reverse()
-
-#         for index in range(1, len(row)):
-#             number_of_bad_levels = 0
-
-#             if row[index] <= row[index -1]:
-#                 number_of_bad_levels += 1
-
-#             if abs(row[index] - row[index-1]) == 0 or abs(row[index]-row[index-1]) > 3:
-#                 print(row, abs(row[index] - row[index-1]))
-#                 number_of_bad_levels += 1
-
-
-#             if number_of_bad_levels >= 1:
-#                 print(number_of_bad_levels, "number_of_bad_levels")   
-#                 number_of_unsafe_reports += 1
-        
