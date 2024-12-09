@@ -12,7 +12,7 @@ def check_number_of_unsafe_levels(row):
     number_of_unsafe_levels = 0
 
     for index in range(1, len(row)):
-        if 0 == abs(row[index] - row[index-1]) or abs(row[index] - row[index-1]) > 3:
+        if not 0 < abs(row[index] - row[index-1]) < 4:
             number_of_unsafe_levels += 1
 
     return number_of_unsafe_levels
